@@ -9,7 +9,7 @@ const Cards = () => {
      
       <h3 className="invoices-title">Tus Facturas</h3>
       <div className="cards-invoices-container">
-      <img  className="invoice-img" src="./img/Form.svg" alt="" />
+      <img  className="invoice-img" src="./img/Invoice.svg" alt="" />
       <div className="subject-container">
 
         <ul className="invoices-subjects">

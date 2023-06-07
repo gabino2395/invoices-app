@@ -1,0 +1,50 @@
+.form-page-container{
+ margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* height: 500px; */
+  gap: 2em;
+
+}
+.form{
+  border-color: solid RGB(54 123 255);
+}
+.form-subtitle{
+  /* border: solid; */
+  text-align: center;
+
+}
+.reset-click{
+  border: 1px solid rgb(225, 218, 218);
+  border-radius: 20px;
+  width: 120px;
+  padding: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.4s ease;
+}
+.reset-click:hover{
+  /* color: RGB(54 123 255); */
+  box-shadow: 0 3px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+}
+@media only screen and (min-width: 1200px) {
+  .subject-container {
+    width: 800px !important;
+  }
+
+  .invoices-subjects {
+    width: 740px;
+  }
+
+  .form-page-container {
+    /* border: solid; */
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+
+
+  }
+}
