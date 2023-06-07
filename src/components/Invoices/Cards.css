@@ -1,0 +1,134 @@
+.cards-invoices-container {
+  /* border: solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* height: 500px; */
+  gap: 2em;
+
+
+}
+
+.subject-container {
+  position: relative;
+  height: 450px;
+  border: 1px solid rgb(225, 222, 222);
+  border: solid RGB(54 123 255);
+
+  /* border: 1px solid var(--j-qkgmf); */
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 20px;
+  background: RGB(54 123 255);
+  background: rgb(252, 252, 252);
+  width: 370px;
+  /* min-width: 80%; */
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.data {
+  /* border: solid; */
+  overflow-y: scroll;
+  max-height: 380px;
+}
+
+.invoice-img {
+  height: 400px;
+  /* width: 600px; */
+}
+
+.invoices-subjects {
+  border-bottom: solid rgb(211, 208, 208);
+  display: flex;
+  align-items: center;
+  margin: 4px;
+  position: sticky;
+  margin-bottom: 10px;
+  top: 2px;
+  /* justify-content: space-around; */
+  /* gap: 1em; */
+  width: 400px;
+  width: 350px;
+  width: 100%;
+
+  background: rgb(245, 237, 237);
+  background: rgb(255, 255, 255);
+
+  box-shadow: 0.1em 0.1em 0.4em 0.1em rgba(0, 0, 0, 0.2);
+  border: rgb(237, 231, 231) solid;
+  /* border: 1px solid var(--j-qkgmf); */
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+  height: 50px;
+}
+.item-none{
+  display: none;
+}
+.invoices-subjects li {
+  min-width: 100px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.invoices-title{
+  text-align: center;
+  font-size: 34px;
+  margin: 0 auto;
+  width: 100vw;
+
+}
+
+/* responsive */
+@media only screen and (min-width: 1200px) {
+  .subject-container {
+    width: 800px !important;
+  }
+
+  .invoices-subjects {
+    width: 740px;
+  }
+
+  .cards-invoices-container {
+    /* border: solid; */
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+
+
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .subject-container {
+    width:80%;
+  }
+
+  .invoices-subjects {
+    width: 100%;
+      justify-content: space-around;
+
+  }
+
+  .cards-invoices-container {
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 500px; */
+
+
+  }
+  .name-field-invoice{
+
+  }
+}
