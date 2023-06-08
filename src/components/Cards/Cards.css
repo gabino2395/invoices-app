@@ -1,26 +1,20 @@
 .grid-box {
-  /* border: solid black; */
-  /* width: 1200px; */
+
   height: 600px;
-  /* overflow: scroll; */
   text-align: center;
   margin: 0 auto;
 
 }
+
 .portofolio-boxes img {
   gap: 1em;
-  /* width: 415px; */
   border: solid;
   height: 440px;
   background: rgba(0, 0, 0, 0.7);
   opacity: 1;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  /* position: absolute; */
-  /* left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;} */
+
 }
 
 .portofolio-boxes img:hover {
@@ -63,23 +57,13 @@
   color: white;
 
   position: absolute;
-  /* border: solid white; */
   width: 100%;
-  /* left: 20%; */
   top: 50%;
   font-size: 20px;
 }
 
-.long-name {
-  /* left: 30%; */
 
-}
 
 .texto:hover {
   color: white;
 }
-/* .product-title{
-border: solid;
-text-align: center;
-
-} */
