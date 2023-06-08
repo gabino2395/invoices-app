@@ -20,9 +20,11 @@ const Products = () => {
   }, []);
   return (
     <>
+         <div className="first-box"></div>
+
       <div className="grid-box ">
-        <h1>Products</h1>
-        <div className=" grid-box bg-red-50 text-center  justify-center items-center m-12 ">
+        <h1 className="invoices-title product-title">Productos</h1>
+        <div className=" grid-box 0 text-center  justify-center items-center m-12 ">
           <div className="flex flex-wrap gap-10  justify-center items-center m-12">
             {invoices.map((invoice) => {
               return (

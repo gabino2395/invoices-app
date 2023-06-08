@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 15px;
   border-radius: 20px;
   background: RGB(54 123 255);
@@ -84,7 +84,9 @@
   width: 100vw;
 
 }
-
+.first-box{
+height: 100px;
+}
 /* responsive */
 @media only screen and (min-width: 1200px) {
   .subject-container {

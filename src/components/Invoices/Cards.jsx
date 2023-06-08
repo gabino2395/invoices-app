@@ -6,7 +6,7 @@ const Cards = () => {
   const { db: data, setDataToEdit, deleteData } = useContext(CrudContext);
   return (
     <div>
-     
+     <div className="first-box"></div>
       <h3 className="invoices-title">Tus Facturas</h3>
       <div className="cards-invoices-container">
       <img  className="invoice-img" src="./img/Invoice.svg" alt="" />

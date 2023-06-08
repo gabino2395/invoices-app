@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { initialDb } from "../db/db";
+import { Toaster, toast } from 'sonner'
+
 const CrudContext = createContext();
 
 const CrudProvider = ({ children }) => {
@@ -35,13 +37,14 @@ const CrudProvider = ({ children }) => {
 
   const updateData = (data) => {
     let newData = db.map((el) => (el.id === data.id ? data : el));
-    alert("editado");
+    // toast.success("editado");
     setDb(newData);
   };
   const deleteData = (id) => {
     let isDelete = window.confirm(
       `¿Estás seguro de eliminar el registro con el id '${id}'?`
     );
+    toast.error('eliminado')
 
     if (isDelete) {
       let newData = db.filter((el) => el.id !== id);
@@ -79,7 +82,8 @@ const CrudProvider = ({ children }) => {
     setDataToEdit,
     updateData,
     deleteData,
-    validate
+    validate,
+    toast
   };
 
   return <CrudContext.Provider value={data}>{children}</CrudContext.Provider>;

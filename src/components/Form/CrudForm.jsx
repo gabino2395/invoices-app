@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CrudContext from "../../context/CrudContext";
 // import { validate } from "../utils/Validations";
 import "./Form.css";
+import { Toaster, toast } from "sonner";
+
+
 const initailForm = {
   name: "",
   date: "",
@@ -14,7 +17,7 @@ const initailForm = {
 const CrudForm = () =>
   // { createData, updateData, dataToEdit, setDataToEdit }
   {
-    const navigate=useNavigate()
+    const navigate = useNavigate();
 
     const {
       createData,
@@ -24,6 +27,7 @@ const CrudForm = () =>
       setDisable,
       disable,
       validate,
+      toast,
     } = useContext(CrudContext);
     const [invoices, setInvoices] = useState([]);
     let [item, setItem] = useState("All items");
@@ -77,37 +81,47 @@ const CrudForm = () =>
       if (Object.values(errorSave).length !== 0) {
         alert("Please, fullfil the required camps.");
       } else {
-        // if (!formData.name) {
-        //   alert("Datos incompletos");
-        //   return;
-        // }
         if (formData.id === null) {
+          alert("creado");
+
           createData(formData);
+          notifyCreate()
         } else {
+          // alert("editado");
           updateData(formData);
         }
-        // setFormData({
-        //   name: "",
-        //   date: "",
-        //   item: "",
-        //   id: null,
-        //   total: 0,
-        // });
+        notifyEdit();
         handleReset();
-        navigate('/')
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       }
 
       // Lógica para guardar la factura
       // Actualizar el listado de facturas en el componente InvoiceList
     };
-
+    // const toastFunc = () => {
+    //   alert("si");
+    //   toast.success("cambios!");
+    //   toast("Event has been created", {
+    //     description: "Monday, January 3rd at 6:00pm",
+    //     icon: "",
+    //   });
+    // };
     const handleReset = (e) => {
       setFormData(initailForm);
       setDataToEdit(null);
     };
-
+    const notifyEdit = () => {
+      toast.success("Factura editada con exito!");
+    };
+    const notifyCreate = () => {
+      toast.success("Factura creada con exito!");
+    };
     return (
       <>
+        <div className="first-box"></div>
+
         <h1 className="invoices-title">Formulario de Factura</h1>
         <div className=" form-page-container">
           <img className="invoice-img" src="./img/Form.svg" alt="" />
@@ -126,7 +140,7 @@ const CrudForm = () =>
                   class="block text-gray-700 text-sm font-bold mb-2"
                   for="username"
                 >
-                  Nombre 
+                  Nombre
                 </label>
                 <input
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -188,15 +202,26 @@ const CrudForm = () =>
                 {disable ? (
                   ""
                 ) : (
-                  <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit"
-                  >
-                    Agregar factura
-                  </button>
+                  <>
+                    <Toaster richColors position="top-right" />
+                    <button
+                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      type="submit"
+                    >
+                      Agregar factura
+                    </button>
+                    {/* <ToastContainer /> */}
+                  </>
                 )}
-                
-              <button className="reset-click" type="reset" value="Limpiar" onClick={handleReset}>Limpiar</button>
+
+                <button
+                  className="reset-click"
+                  type="reset"
+                  value="Limpiar"
+                  onClick={handleReset}
+                >
+                  Limpiar
+                </button>
               </div>
             </form>
           </div>

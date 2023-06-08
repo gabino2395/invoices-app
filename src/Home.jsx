@@ -19,6 +19,22 @@ const initialDb = [
     total: 100,
     constellation:"como"
   },
+  {
+    id: 2,
+    name: "Factura de ejemplo2",
+    date: "1994-12-12",
+    item: "MacBook Pro",
+    total: 100,
+    constellation:"como"
+  },
+  {
+    id: 2,
+    name: "Factura de ejemplo2",
+    date: "1994-12-12",
+    item: "MacBook Pro",
+    total: 100,
+    constellation:"como"
+  },
 ];
 const Home = () => {
   const [db, setDb] = useState(initialDb);
