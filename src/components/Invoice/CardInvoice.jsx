@@ -13,7 +13,6 @@ const CardInvoice = ({ el }) => {
   return (
     <div className="card-container">
       <div className="name-field-invoice name">
-        {/* Nombre: */}
         <p> {name}</p>
       </div>
       <div>
@@ -25,7 +24,7 @@ const CardInvoice = ({ el }) => {
         <p> ${total}</p>
       </div>
       <div className="name-field-invoice">
-      <Toaster position="top-right" richColors />
+        <Toaster position="top-right" richColors />
 
         <button onClick={() => setDataToEdit(el)}>
           <span onClick={editItem} class="material-symbols-outlined edit-icon">

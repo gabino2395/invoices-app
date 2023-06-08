@@ -1,1 +1,4 @@
 - chequear bug de precio
+- eliminar comentarios
+- ordenar
+- estudiar flujo

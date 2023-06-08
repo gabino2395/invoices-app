@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { initialDb } from "../db/db";
-import { Toaster, toast } from 'sonner'
+import { Toaster, toast } from "sonner";
 
 const CrudContext = createContext();
 
@@ -10,10 +10,11 @@ const CrudProvider = ({ children }) => {
   const [loaded, setLoaded] = useState(false);
   const [disable, setDisable] = useState(false);
 
+  //Se encarga de guardar los datos en el LocalStorage. Esta función se llamará cada vez que se modifiquen los datos en db. Utilizamos el método setItem del LocalStorage para guardar los datos en formato JSON.
   const saveToLocalStorage = (data) => {
     localStorage.setItem("data", JSON.stringify(data));
   };
-
+  //cargar los datos desde el LocalStorage cuando el componente se monte.
   useEffect(() => {
     const data = localStorage.getItem("data");
     if (data) {
@@ -24,7 +25,9 @@ const CrudProvider = ({ children }) => {
       setLoaded(true);
     }
   }, []);
+  // guardar los datos en el LocalStorage cada vez que el estado db cambie
   useEffect(() => {
+    //verificamos si loaded es true (para evitar guardar los datos iniciales antes de que se carguen los datos del LocalStorage) y llamamos a la función saveToLocalStorage
     if (loaded) {
       saveToLocalStorage(db);
     }
@@ -37,14 +40,13 @@ const CrudProvider = ({ children }) => {
 
   const updateData = (data) => {
     let newData = db.map((el) => (el.id === data.id ? data : el));
-    // toast.success("editado");
     setDb(newData);
   };
   const deleteData = (id) => {
     let isDelete = window.confirm(
       `¿Estás seguro de eliminar el registro con el id '${id}'?`
     );
-    toast.error('eliminado')
+    toast.error("eliminado");
 
     if (isDelete) {
       let newData = db.filter((el) => el.id !== id);
@@ -74,7 +76,6 @@ const CrudProvider = ({ children }) => {
   }
   const data = {
     db,
-  
     disable,
     setDisable,
     createData,
@@ -83,7 +84,7 @@ const CrudProvider = ({ children }) => {
     updateData,
     deleteData,
     validate,
-    toast
+    toast,
   };
 
   return <CrudContext.Provider value={data}>{children}</CrudContext.Provider>;
